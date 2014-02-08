@@ -27,7 +27,7 @@ public class ControllerPanelListContacts implements ActionListener {
 
 	/**
 	 * Construct a contacts list panel Controller
-	 * @param model the model attached to this controller
+	 * @param modelSingleThread the modelSingleThread attached to this controller
 	 * @param view the view where the controller listens
 	 */
 	public ControllerPanelListContacts(ModelAddressBook model, ViewPanelListContacts view) {

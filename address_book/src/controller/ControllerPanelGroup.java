@@ -19,7 +19,7 @@ import view.ViewPanelGroup;
 public class ControllerPanelGroup implements ActionListener {
 
 	/**
-	 * model representing view data
+	 * modelSingleThread representing view data
 	 */
 	private ModelAddressBook model;
 	/**
@@ -29,7 +29,7 @@ public class ControllerPanelGroup implements ActionListener {
 
 	/**
 	 * Construct a panel block listener
-	 * @param model : data on which the view is based
+	 * @param modelSingleThread : data on which the view is based
 	 * @param view : the displayed content
 	 */
 	public ControllerPanelGroup(ModelAddressBook model, ViewPanelGroup view) {

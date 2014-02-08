@@ -1,4 +1,4 @@
-package modelMultiThreaded;
+package modelSingleThread;
 
 import java.awt.Desktop;
 import java.io.*;

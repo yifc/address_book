@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 
+import modelSingleThread.*;
 /**
  * Class representing a contact with all these fields
  * @author Julien ADAM

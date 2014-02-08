@@ -2,8 +2,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.ModelAddressBook;
-import model.ModelContact;
+import model.*;
 
 import view.ViewGlobalFrame;
 
@@ -23,13 +22,13 @@ public class ControllerGlobalFrame implements ActionListener {
 	 */
 	private ViewGlobalFrame mainView;
 	/**
-	 * model used by main frame
+	 * modelSingleThread used by main frame
 	 */
 	private ModelAddressBook mainModel;
 
 	/**
 	 * Construct a Main Frame Controller
-	 * @param model the model attached to this controller
+	 * @param modelSingleThread the modelSingleThread attached to this controller
 	 * @param view the view where the controller listens
 	 */
 	public ControllerGlobalFrame(ModelAddressBook model, ViewGlobalFrame view){

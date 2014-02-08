@@ -8,8 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import model.ModelAddressBook;
-import model.ModelContact;
+import model.*;
 import controller.ControllerPanelContactMouse;
 
 /**
@@ -53,7 +52,7 @@ public class ViewPanelContact extends JPanel {
 
 	/**
 	 * constructs a new contact panel
-	 * @param model model used to find contact's data
+	 * @param modelSingleThread modelSingleThread used to find contact's data
 	 */
 	public ViewPanelContact(ModelAddressBook model) {
 		super();

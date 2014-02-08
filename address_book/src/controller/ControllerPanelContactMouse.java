@@ -19,7 +19,7 @@ import model.ModelAddressBook;
 public class ControllerPanelContactMouse implements MouseListener {
 
 	/**
-	 * Represents internal object on which address book is used. THis model contains contacts.
+	 * Represents internal object on which address book is used. THis modelSingleThread contains contacts.
 	 */
 	private ModelAddressBook model;
 	/**
@@ -29,7 +29,7 @@ public class ControllerPanelContactMouse implements MouseListener {
 
 	/**
 	 * Construct a MouseListener on contact displaying panel
-	 * @param model : model on which the view is based
+	 * @param modelSingleThread : modelSingleThread on which the view is based
 	 * @param view : the view displayed to the user
 	 */
 	public ControllerPanelContactMouse(ModelAddressBook model, ViewPanelContact view){

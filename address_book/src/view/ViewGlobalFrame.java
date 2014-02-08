@@ -38,7 +38,7 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 	private final Dimension sizeContent = new Dimension(850,200);
 	
 	/**
-	 * model to observe in order to update on each change
+	 * modelSingleThread to observe in order to update on each change
 	 */
 	private ModelAddressBook model;
 	private ViewPanelGroup panelGroup;
@@ -60,7 +60,7 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 	
 	/**
 	 * Construct a main frame
-	 * @param model : model on which main frame is based
+	 * @param modelSingleThread : modelSingleThread on which main frame is based
 	 */
 	public ViewGlobalFrame(ModelAddressBook model){
 		super("Address Book");

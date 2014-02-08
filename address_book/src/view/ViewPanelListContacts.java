@@ -32,7 +32,7 @@ public class ViewPanelListContacts extends JPanel {
 
 	/**
 	 * Constructs a contacts list panel
-	 * @param model model used to load contacts' data
+	 * @param modelSingleThread modelSingleThread used to load contacts' data
 	 */
 	public ViewPanelListContacts(ModelAddressBook model) {
 		super();

@@ -1,4 +1,4 @@
-package modelMultiThreaded;
+package modelSingleThread;
 
 import java.util.Date;
 

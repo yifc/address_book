@@ -6,6 +6,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
 
+import modelSingleThread.*;
+
 /**
  * Class representing an address book with contacts
  * @author Julien ADAM
