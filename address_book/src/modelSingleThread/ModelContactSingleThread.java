@@ -7,7 +7,7 @@ import java.util.Date;
  * @author Julien ADAM
  * @version 1.0
  */
-public final class ModelContact {
+public final class ModelContactSingleThread {
 	private String lastName;
 	private String firstName;
 	private String homeAddress;
@@ -35,7 +35,7 @@ public final class ModelContact {
 	 * @param homePage : its home page
 	 * @param link : its link
 	 */
-	public ModelContact(String group, String last, String first, String home, String company, String pers, String work, String email, String homePage, String link){
+	public ModelContactSingleThread(String group, String last, String first, String home, String company, String pers, String work, String email, String homePage, String link){
 		this.group = group;
 		lastName = last;
 		firstName = first;
@@ -94,7 +94,7 @@ public final class ModelContact {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ModelContact other = (ModelContact) obj;
+		ModelContactSingleThread other = (ModelContactSingleThread) obj;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;

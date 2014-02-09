@@ -8,7 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import model.*;
+import model.ModelAddressBook;
+import modelSingleThread.ModelContactSingleThread;
 import controller.ControllerPanelContactMouse;
 
 /**
@@ -56,7 +57,7 @@ public class ViewPanelContact extends JPanel {
 	 */
 	public ViewPanelContact(ModelAddressBook model) {
 		super();
-		ModelContact contact = null;
+		ModelContactSingleThread contact = null;
 		ControllerPanelContactMouse controllerMouse = new ControllerPanelContactMouse(model, this);
 		init = false;
 		setPreferredSize(sizePanel);

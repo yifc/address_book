@@ -65,7 +65,7 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 	public ViewGlobalFrame(ModelAddressBook model){
 		super("Address Book");
 		this.model = model;
-		this.model.addObserver(this);
+		this.model.trackObservable(this);
 		this.setSize(sizeFrame);
 		this.setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -73,10 +73,9 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 		//move frame on the center of the screen
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(dim.width/2 - getWidth()/2, dim.height/2 - getHeight()/2);
-
+		
 		//draw the frame
 		drawFrame();
-		
 		//active displaying
 		setVisible(true);
 	}
@@ -103,7 +102,7 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 		TitledBorder titleGroup;
 		titleGroup = BorderFactory.createTitledBorder("Group");
 		panelGroup.setBorder(titleGroup);
-		
+
 		//LIST
 		panelList = new ViewPanelListContacts(model);
 		TitledBorder titleContacts;
@@ -113,7 +112,6 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 		scrolled.setPreferredSize(sizeScrolled);
 		scrolled.setBorder(titleContacts);
 
-	
 		//CONTACT
 		panelContact = new ViewPanelContact(model);
 		TitledBorder titleContact;

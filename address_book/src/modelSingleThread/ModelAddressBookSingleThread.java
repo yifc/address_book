@@ -12,12 +12,12 @@ import java.util.*;
  * @version 1.0
  * @see Observable
  */
-public final class ModelAddressBook extends Observable {
+public final class ModelAddressBookSingleThread extends Observable {
 
 	/**
 	 * the list of contacts
 	 */
-	private List<ModelContact> book;
+	private List<ModelContactSingleThread> book;
 	/**
 	 * the CSV filename where contacts are stored on filesystem
 	 */
@@ -27,16 +27,16 @@ public final class ModelAddressBook extends Observable {
 	 * Constructs an address book
 	 * @param filename : the path to the CSV file where contacts are stored
 	 */
-	public ModelAddressBook(String filename){
+	public ModelAddressBookSingleThread(String filename){
 
 		String line;
-		book = new ArrayList<ModelContact>();
+		book = new ArrayList<ModelContactSingleThread>();
 		this.filename = filename;
 		try{ //File reading
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			while((line = br.readLine()) != null){
 				String[] tabArgs = line.split(",");
-				book.add(new ModelContact(tabArgs[0], tabArgs[1], tabArgs[2], tabArgs[3], tabArgs[4], tabArgs[5], tabArgs[6], tabArgs[7], tabArgs[8], tabArgs[9]));
+				book.add(new ModelContactSingleThread(tabArgs[0], tabArgs[1], tabArgs[2], tabArgs[3], tabArgs[4], tabArgs[5], tabArgs[6], tabArgs[7], tabArgs[8], tabArgs[9]));
 			}
 			br.close();
 		}
@@ -68,7 +68,7 @@ public final class ModelAddressBook extends Observable {
 	 * @param contact to find in address book
 	 * @return if succeeded, the list indice where contact is stored in database. Otherwise, -1
 	 */
-	public int findContact(ModelContact contact){
+	public int findContact(ModelContactSingleThread contact){
 		for(int i=0; i < book.size(); i++){
 			if(book.get(i).getLastName().compareTo(contact.getLastName()) == 0) return i;
 		}
@@ -79,7 +79,7 @@ public final class ModelAddressBook extends Observable {
 	 * Update a contact in the address book. If the contact is not found in the base, he is added instead.
 	 * @param contact : the contact to update
 	 */
-	public void updateContact(ModelContact contact){
+	public void updateContact(ModelContactSingleThread contact){
 
 		int indice = this.findContact(contact);
 		if(indice < 0){
@@ -95,7 +95,7 @@ public final class ModelAddressBook extends Observable {
 	 * Delete given contact from the database.
 	 * @param contact : the contact to delete
 	 */
-	public void deleteContact(ModelContact contact){
+	public void deleteContact(ModelContactSingleThread contact){
 		int indice = this.findContact(contact);
 		if(indice < 0){
 			System.out.println("Contact " + contact.getLastName() + " " + contact.getFirstName() + " doesn't exist !");
@@ -109,7 +109,7 @@ public final class ModelAddressBook extends Observable {
 	 * Add a contact to the address book
 	 * @param contact : contact to add
 	 */
-	public void addContact(ModelContact contact){
+	public void addContact(ModelContactSingleThread contact){
 		book.add(contact);
 	}
 
@@ -117,8 +117,8 @@ public final class ModelAddressBook extends Observable {
 	 * Reorder the address book to sort contacts per alphabetical order
 	 */
 	public void sortPerAlphabeticalOrder(){
-		Collections.sort(book, new Comparator<ModelContact>(){
-			public int compare(final ModelContact m1, final ModelContact m2){
+		Collections.sort(book, new Comparator<ModelContactSingleThread>(){
+			public int compare(final ModelContactSingleThread m1, final ModelContactSingleThread m2){
 				return m1.getLastName().compareTo(m2.getLastName());
 			}
 		});
@@ -129,9 +129,9 @@ public final class ModelAddressBook extends Observable {
 	 * Reorder the address book to sort contacts per Last Updated, from the last updated to the first updated.
 	 */
 	public void sortPerLastUpdated(){
-		List<ModelContact> sorted = new ArrayList<ModelContact>(book);
-		Collections.sort(sorted, new Comparator<ModelContact>(){
-			public int compare(ModelContact m1, ModelContact m2) {
+		List<ModelContactSingleThread> sorted = new ArrayList<ModelContactSingleThread>(book);
+		Collections.sort(sorted, new Comparator<ModelContactSingleThread>(){
+			public int compare(ModelContactSingleThread m1, ModelContactSingleThread m2) {
 				//reverse order : X (-1)
 				return (-1) * (m1.getUpdated().compareTo(m2.getUpdated()));
 			}
@@ -209,11 +209,11 @@ public final class ModelAddressBook extends Observable {
 			book.get(i).setDisplayed(false);
 	}
 
-	public List<ModelContact> getBook() {
+	public List<ModelContactSingleThread> getBook() {
 		return book;
 	}
 
-	public void setBook(List<ModelContact> book) {
+	public void setBook(List<ModelContactSingleThread> book) {
 		this.book = book;
 	}
 
@@ -261,5 +261,9 @@ public final class ModelAddressBook extends Observable {
 			return false;
 		}
 		return true;
+	}
+
+	public String getFilename() {
+		return filename;
 	}
 }

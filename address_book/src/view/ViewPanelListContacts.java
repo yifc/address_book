@@ -39,7 +39,6 @@ public class ViewPanelListContacts extends JPanel {
 		ControllerPanelListContacts controller = new ControllerPanelListContacts(model, this);
 		tabContacts = new ArrayList<JButton>();
 		setLayout(new GridLayout(model.getNbRequired(),1));
-
 		for(int i = 0; i < model.getNbContacts(); i++){
 
 			if(model.getBook().get(i).isRequired()){//if filter group have chosen to keep this contact

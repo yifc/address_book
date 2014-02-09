@@ -2,7 +2,8 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.*;
+import model.ModelAddressBook;
+import modelSingleThread.ModelContactSingleThread;
 
 import view.ViewGlobalFrame;
 
@@ -48,7 +49,7 @@ public class ControllerGlobalFrame implements ActionListener {
 		else if(arg0.getSource() == mainView.lastUpdatedSort) //last updated sorting button
 			mainModel.sortPerLastUpdated();
 		else if(mainView.panelContact.isInitied() == true){ // action raising a contact modification
-			ModelContact current = new ModelContact( //contact creation
+			ModelContactSingleThread current = new ModelContactSingleThread( //contact creation
 					mainView.panelContact.fieldGroup.getSelectedItem().toString(),
 					mainView.panelContact.fieldName.getText(),
 					mainView.panelContact.fieldFirstName.getText(),
