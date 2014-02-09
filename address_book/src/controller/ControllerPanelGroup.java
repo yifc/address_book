@@ -29,8 +29,8 @@ public class ControllerPanelGroup implements ActionListener {
 
 	/**
 	 * Construct a panel block listener
-	 * @param modelSingleThread : data on which the view is based
-	 * @param view : the displayed content
+	 * @param model data on which the view is based
+	 * @param view the displayed content
 	 */
 	public ControllerPanelGroup(ModelAddressBook model, ViewPanelGroup view) {
 		this.model = model;

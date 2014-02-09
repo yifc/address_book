@@ -29,7 +29,7 @@ public class ControllerGlobalFrame implements ActionListener {
 
 	/**
 	 * Construct a Main Frame Controller
-	 * @param modelSingleThread the modelSingleThread attached to this controller
+	 * @param model the model attached to this controller
 	 * @param view the view where the controller listens
 	 */
 	public ControllerGlobalFrame(ModelAddressBook model, ViewGlobalFrame view){

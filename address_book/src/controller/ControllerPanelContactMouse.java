@@ -29,8 +29,8 @@ public class ControllerPanelContactMouse implements MouseListener {
 
 	/**
 	 * Construct a MouseListener on contact displaying panel
-	 * @param modelSingleThread : modelSingleThread on which the view is based
-	 * @param view : the view displayed to the user
+	 * @param model model on which the view is based
+	 * @param view the view displayed to the user
 	 */
 	public ControllerPanelContactMouse(ModelAddressBook model, ViewPanelContact view){
 		this.model = model;

@@ -60,7 +60,7 @@ public class ViewGlobalFrame extends JFrame implements Observer {
 	
 	/**
 	 * Construct a main frame
-	 * @param modelSingleThread : modelSingleThread on which main frame is based
+	 * @param model : model on which main frame is based
 	 */
 	public ViewGlobalFrame(ModelAddressBook model){
 		super("Address Book");

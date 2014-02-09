@@ -53,7 +53,7 @@ public class ViewPanelContact extends JPanel {
 
 	/**
 	 * constructs a new contact panel
-	 * @param modelSingleThread modelSingleThread used to find contact's data
+	 * @param model model used to find contact's data
 	 */
 	public ViewPanelContact(ModelAddressBook model) {
 		super();

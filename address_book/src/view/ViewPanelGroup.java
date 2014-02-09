@@ -30,7 +30,7 @@ public class ViewPanelGroup extends JPanel {
 	
 	/**
 	 * Construct a group panel
-	 * @param modelSingleThread modelSingleThread used to load group data
+	 * @param model model used to load group data
 	 */
 	public ViewPanelGroup(ModelAddressBook model) {
 		super();
